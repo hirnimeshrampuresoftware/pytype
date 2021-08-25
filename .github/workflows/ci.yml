@@ -80,7 +80,7 @@ jobs:
             ${{ env.img }} \
             bash -exc '${{ env.py }} -m venv .env && \
             source .env/bin/activate && \
-            apt -y install g++ cmake bison flex && \
+            yum -y install cmake bison flex && \
             pip install -r requirements.txt && \
             python build_scripts/ci_script.py && \
             deactivate'
