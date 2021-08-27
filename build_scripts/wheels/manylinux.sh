@@ -60,7 +60,9 @@ dirs -c
 rm -rf "$TD"
 
 cmake --version
-ninja --version
+if [ `uname -m` == "x86_64" ]; then
+  ninja --version
+fi
 flex --version
 bison --version
 
