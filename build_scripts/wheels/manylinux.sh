@@ -30,8 +30,7 @@ mv ninja /usr/local/bin/
 rm -vf ninja*
 ln -s /usr/local/bin/ninja /usr/local/bin/ninja-build
 
-pip3 install ninja
-
+pip3 install scikit-build ninja
 
 TD="$(mktemp -d)"
 pushd "$TD" || exit 1
