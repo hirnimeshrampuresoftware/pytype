@@ -11,7 +11,7 @@ fi
 yum install -y gettext-devel python3-devel # gettext is for flex
 
 # TODO: what should be the update cadence for these?
-NINJA_VERSION='1.10.0'
+NINJA_VERSION='1.10.2'
 BISON_VERSION='3.6'
 FLEX_VERSION='2.6.4'
 
@@ -20,6 +20,8 @@ untar() {
   tar -C "$1" -xzvf "${1}.tar.gz" --strip-components=1
   rm -vf "${1}.tar.gz"
 }
+
+pip3 install scikit-build
 
 # Install ninja/ninja-build (requires CMake)
 curl -sSL \
@@ -30,8 +32,7 @@ mv ninja /usr/local/bin/
 rm -vf ninja*
 ln -s /usr/local/bin/ninja /usr/local/bin/ninja-build
 
-pip3 install scikit-build
-pip3 install ninja
+#pip3 install ninja
 
 TD="$(mktemp -d)"
 pushd "$TD" || exit 1
