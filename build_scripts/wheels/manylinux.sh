@@ -21,8 +21,6 @@ untar() {
   rm -vf "${1}.tar.gz"
 }
 
-pip3 install scikit-build
-
 # Install ninja/ninja-build (requires CMake)
 curl -sSL \
   -o ninja.zip \
@@ -32,6 +30,7 @@ mv ninja /usr/local/bin/
 rm -vf ninja*
 ln -s /usr/local/bin/ninja /usr/local/bin/ninja-build
 
+#pip3 install scikit-build
 #pip3 install ninja
 
 TD="$(mktemp -d)"
@@ -59,7 +58,7 @@ dirs -c
 rm -rf "$TD"
 
 cmake --version
-ninja --version
+#ninja --version
 flex --version
 bison --version
 
