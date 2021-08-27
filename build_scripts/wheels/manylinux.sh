@@ -22,13 +22,15 @@ untar() {
 }
 
 # Install ninja/ninja-build (requires CMake)
-curl -sSL \
-  -o ninja.zip \
-  "https://github.com/ninja-build/ninja/releases/download/v${NINJA_VERSION}/ninja-linux.zip"
-unzip ninja.zip
-mv ninja /usr/local/bin/
-rm -vf ninja*
-ln -s /usr/local/bin/ninja /usr/local/bin/ninja-build
+if [ `uname -m` == "x86_64" ]; then
+   curl -sSL \
+      -o ninja.zip \
+      "https://github.com/ninja-build/ninja/releases/download/v${NINJA_VERSION}/ninja-linux.zip"
+   unzip ninja.zip
+   mv ninja /usr/local/bin/
+   rm -vf ninja*
+   ln -s /usr/local/bin/ninja /usr/local/bin/ninja-build
+fi   
 
 #pip3 install scikit-build
 #pip3 install ninja
@@ -58,7 +60,7 @@ dirs -c
 rm -rf "$TD"
 
 cmake --version
-#ninja --version
+ninja --version
 flex --version
 bison --version
 
