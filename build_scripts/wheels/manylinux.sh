@@ -11,7 +11,7 @@ fi
 yum install -y gettext-devel python3-devel # gettext is for flex
 
 # TODO: what should be the update cadence for these?
-NINJA_VERSION='1.10.2'
+NINJA_VERSION='1.10.0'
 BISON_VERSION='3.6'
 FLEX_VERSION='2.6.4'
 
