@@ -22,18 +22,19 @@ untar() {
 }
 
 # Install ninja/ninja-build (requires CMake)
-if [ `uname -m` == "x86_64" ]; then
+if [ `uname -m` == "aarch64" ]; then
+    git clone https://github.com/ninja-build/ninja.git
+    cd ninja/
+    ./configure.py --bootstrap
+else
    curl -sSL \
       -o ninja.zip \
       "https://github.com/ninja-build/ninja/releases/download/v${NINJA_VERSION}/ninja-linux.zip"
    unzip ninja.zip
-   mv ninja /usr/local/bin/
-   rm -vf ninja*
-   ln -s /usr/local/bin/ninja /usr/local/bin/ninja-build
 fi   
-
-#pip3 install scikit-build
-#pip3 install ninja
+mv ninja /usr/local/bin/
+rm -vf ninja*
+ln -s /usr/local/bin/ninja /usr/local/bin/ninja-build
 
 TD="$(mktemp -d)"
 pushd "$TD" || exit 1
@@ -60,9 +61,7 @@ dirs -c
 rm -rf "$TD"
 
 cmake --version
-if [ `uname -m` == "x86_64" ]; then
-  ninja --version
-fi
+ninja --version
 flex --version
 bison --version
 
