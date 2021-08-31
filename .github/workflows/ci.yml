@@ -83,6 +83,7 @@ jobs:
             docker run --rm -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
             ubuntu \
             bash -exc 'apt update && \
+            apt-get install sudo && \
             sudo apt-get install g++ && \
             sudo apt-get install cmake && \
             sudo apt-get install bison && \
