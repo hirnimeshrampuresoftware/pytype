@@ -93,5 +93,5 @@ jobs:
             sudo apt-get -y install python3-pip && \
             #yum -y install gcc-c++ cmake bison flex python3-devel && \
             python3 --version && \
-            python3.7 -m pip install -r requirements.txt && \
-            python3.7 build_scripts/ci_script.py'
+            python3.8 -m pip install -r requirements.txt && \
+            python3.8 build_scripts/ci_script.py'
