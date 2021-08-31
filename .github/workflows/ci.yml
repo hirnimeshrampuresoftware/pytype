@@ -84,10 +84,10 @@ jobs:
             apt install software-properties-common -y && \
             sudo add-apt-repository ppa:deadsnakes/ppa && \
             sudo apt install python3.7 -y && \
+            python3.7 -m pip install --upgrade pip && \
             #sudo apt-get -y install python3.7 && \
             python3.7 -m pip install virtualenv && python3.7 -m venv .env && \
             source .env/bin/activate && \
-            python -m pip install --upgrade pip && \
             #sudo apt-get -y install python-is-python3 && \
             uname -m && \
             sudo apt-get -y install g++ && \
