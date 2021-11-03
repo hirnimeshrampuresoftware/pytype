@@ -18,6 +18,7 @@ jobs:
     name: Python ${{ matrix.python_tag }} ${{ matrix.platform }} wheels
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         platform:
           - manylinux2014_x86_64
