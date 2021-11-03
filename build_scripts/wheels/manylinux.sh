@@ -25,7 +25,7 @@ untar() {
 if [ `uname -m` == "aarch64" ]; then
     yum install -y epel-release
     yum-config-manager --enable epel
-    yum install ninja-build
+    yum install -y ninja-build
  #   git clone https://github.com/ninja-build/ninja.git
   #  cd ninja/
    # ./configure.py --bootstrap
