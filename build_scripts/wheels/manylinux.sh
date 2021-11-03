@@ -23,7 +23,7 @@ untar() {
 
 # Install ninja/ninja-build (requires CMake)
 if [ `uname -m` == "aarch64" ]; then
-    yum install ninja
+    yum install ninja-build
  #   git clone https://github.com/ninja-build/ninja.git
   #  cd ninja/
    # ./configure.py --bootstrap
