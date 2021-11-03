@@ -64,11 +64,7 @@ dirs -c
 rm -rf "$TD"
 
 cmake --version
-if [ `uname -m` == "aarch64" ]; then
-    ninja-build --version
-else
-    ninja --version
-fi
+ninja-build --version
 flex --version
 bison --version
 
